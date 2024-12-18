@@ -1,8 +1,8 @@
 import { expect } from '@playwright/test';
 
-exports.LoginPage = class LoginPage {
+export class LoginPage {
     constructor(page) {
-        this.page = page
+        this.page = page;
         
         //Locators
         this.txt_loginEmail = '#email'

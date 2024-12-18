@@ -1,0 +1,28 @@
+{
+    "createAccountTests": [
+        {
+          "email": "userDsf44354Test@example.com",
+          "firstName": "John",
+          "lastName": "Doe",
+          "Password": "!@userPassword1234"
+        },
+        {
+          "email": "userA142FHF3Test@example.com",
+          "firstName": "Alice",
+          "lastName": "Smith",
+          "Password": "!@userPassword1234"
+        },
+        {
+          "email": "userB5467Test@example.com",
+          "firstName": "Bob",
+          "lastName": "Johnson",
+          "Password": "!@userPassword"
+        },
+        {
+          "email": "userC8490Test@example.com",
+          "firstName": "Charlie",
+          "lastName": "Brown",
+          "Password": "!@userPassword1234"
+        }
+    ]
+} 
