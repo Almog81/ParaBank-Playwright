@@ -19,25 +19,20 @@ test.describe('sanityTest', ()=> {
     createUserPage = new CreateUserPage(page);
   });
 
-  const loginTestData = DDTManager.getLoginData();
-  for (const data of loginTestData) {
-    test(`Test01: Login Test with ${data.email}`, async () => {
-      await homePage.naviToLogin();
-        await loginPage.loginAction(data.email, data.password);
-        await expect(page.locator(homePage.elm_loggedIn).nth(0)).toContainText(data.name);
+  const RegisterData = DDTManager.getCreateAccountData();
+  for (const data of RegisterData) {
+    test(`Test01: Create Account Test for ${data.firstName} ${data.lastName}`, async () => {
+      await homePage.naviToRegister();
+      await createUserPage.createAccountAction(data);
     });
   }
 
-  const createAccountTestData = DDTManager.getCreateAccountData();
-  for (const data of createAccountTestData) {
-    test(`Test02: Create Account Test for ${data.firstName} ${data.lastName}`, async () => {
-      await homePage.naviToCreateAccount();
-      await createUserPage.createAccountAction(
-        data.firstName,
-        data.lastName,
-        data.email,
-        data.password
-      );
+  const loginTestData = DDTManager.getLoginData();
+  for (const data of loginTestData) {
+    test(`Test02: Login Test with ${data.username}`, async () => {
+      await homePage.naviToHomePage()
+        await loginPage.loginAction(data);
+        await expect(page.locator(homePage.elm_welcome).nth(0)).toContainText(data.name);
     });
   }
 
